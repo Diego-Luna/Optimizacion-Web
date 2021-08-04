@@ -20,3 +20,21 @@ Mas info : https://web.dev/rail/
 
 RESUMEN: Cuando tenemos un sitio web lo importante es tener un limite que no exceda los 3 segundos de carga
 
+### 📏 Aprendiendo a medir
+
+lo que no mide, no se mejora
+
+Rail Model:
+* Centrado en el usuario
+* Métricas de rendimiento basadas en la experiencia de usuario
+
+Entregar el contenido y ser interactiva en menos de 5 segundos
+
+* Esta frase parcialmente es cierta por que debemos recordar que no todos los usuarios tendrán la misma velocidad de internet
+
+Cumplir las métricas para los usuarios del percentil 75%
+
+* No basta concentrarse en un numero concreto si no que consiste en dar un buen recorrido por todas la pagina
+
+RESUMEN: Lo importante es dar una experiencia de usuario en TODO el sitio web.
+
