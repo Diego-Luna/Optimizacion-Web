@@ -154,3 +154,33 @@ descarga el script JS pero no lo ejecuta hasta que se finaliza el parsing del HT
 descarga el script JS durante el parsing y una vez se termine de descargar lo ejecuta inmediatamente, bloqueando solo una “pequeña” parte del parsing.
 
 ![Script Async](./readme-img/script_async.png)
+
+## 💇 Priorización de recursos
+
+Podemos decirle al navegador que recursos tengan una prioridad mayor con el atributo media en los elementos link, pero se debe tener cuidado porque cada archivo nuevo sera una nueva petición HTTP.
+
+Se debe tener un balance entre lo que necesita la app y como le podemos ayudar al navegador
+
+Todas las herramientas que serán vistas dentro de todo el curso serán de doble filo como podemos ayudar al navegador también podemos hacer que su trabajo sea más duro
+
+* No todos los recursos tienen la misma prioridad
+* Por ejemplo, en el CSS pasa que metemos todos los estilos para todos los casos que se pueden llegar a dar
+  * Estilos dark mode
+  * Estilos de desktop
+  * Estilos de tablet
+  * Estilos de mobile
+* Pénesenos en el caso de alguien que navega en el móvil, el deberá descargar todos estos estilos, así no le sea de interés o relevantes
+* Con la priorización de recursos en CSS podemos ayudarle a navegador a darles “pistas” para decirle cual tiene mayor prioridad
+
+```html
+<!-- Especificamos el atributo media -->
+<link
+  rel="stylesheet"
+  href="/desktop.css"
+  media="screen and (min-width: 600px)"
+/>
+```
+
+* Esta técnica es simple pero eficiente
+* Nos ayuda bastante a decirle al navegador que puede ser importante que cargue y que no
+* Se debe considerar que cada vez que hagamos esto sera un nuevo request que debamos hacer hacia el servidor
