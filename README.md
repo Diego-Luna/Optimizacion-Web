@@ -83,3 +83,54 @@ Mide todos los cambios inesperados en el layout de una página
 
 RESUMEN: Debemos usar las métricas que son LCP, FID, CLS para mejorar la experiencia de usuario
 
+## 🧭 Etapas de render del navegador
+
+Critical Render Path. - es el proceso de tomar el código HTML, CSS y JS para convertirlos en pixeles en la pantalla
+
+DOM. - Document Object Model
+
+CSSOM. - un árbol similar al DOM, pero para CSS
+
+### Critical Render Path
+
+ Lo que ha sucedido aquí fue que se construyó el DOM [HTML], CSSOM [CSS], Se renderizo [HTML + CSS], Se hizo el layout [cálculos geométricos] y se pintó en la pantalla [Dibujar los pixeles en la pantalla].
+
+
+
+Se compone de 5 etapas.
+
+#### Object Model [etapas 1 y 2]
+
+* Tenemos un index.html
+```html
+<body>
+	<h1>Hallo</h1>
+	<p>Hallo</p>
+</body>
+```
+
+* Tenemos un CSS
+
+```css
+h1 {
+	color: salmon;
+}
+
+p {
+	display: none;
+}
+```
+
+* Se construye el DOM
+* Construye un árbol de arriba hacia abajo
+* También se construye el CSSOM
+
+#### Render Tree [etapa 3]
+
+  * Seguiríamos teniendo los mismos elementos HTML
+  * Solo que en este proceso se distingue que va a pintar y que no
+
+#### Layout | Paint [etapas 4 y 5]
+
+  * Lo primero que hace es ver el ancho disponible para pintar ⇒ Viewport ⇒ width-device
+  * Dependiendo del ancho se estima algunas cosas como el box model
