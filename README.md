@@ -184,3 +184,23 @@ Todas las herramientas que serán vistas dentro de todo el curso serán de doble
 * Esta técnica es simple pero eficiente
 * Nos ayuda bastante a decirle al navegador que puede ser importante que cargue y que no
 * Se debe considerar que cada vez que hagamos esto sera un nuevo request que debamos hacer hacia el servidor
+
+
+## 🗃️ Preloading y prefetching de recursos
+
+* Preload. - Recurso que se descargue junto el HTML
+* Prefetch. - Recurso que en el futuro se podrá usar
+* Precconect. - Conexión anticipada a recursos de servidores remotos
+
+* Podemos decir al navegador cuales son los recursos y dominos que se debe conectar o descargar de forma anticipada
+* Existen 3 estrategias para poderlo hacerlo
+  * Preload (recursos)
+  * Prefetch (recursos)
+  * Preconnect (dominios)
+```html
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+<link rel="dns-prefetch" href="https://fonts.gstatic.com/" />
+```
+  * podemos especificar con el atributo rel las estrategias para realizar este proceso
+
+Si le decimos al navegador de forma anticipada que recursos necesita o a que dominios se puede conectar de una forma anticipada podemos mejorar el rendimiento de nuestros sitios
