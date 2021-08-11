@@ -204,3 +204,23 @@ Todas las herramientas que serán vistas dentro de todo el curso serán de doble
   * podemos especificar con el atributo rel las estrategias para realizar este proceso
 
 Si le decimos al navegador de forma anticipada que recursos necesita o a que dominios se puede conectar de una forma anticipada podemos mejorar el rendimiento de nuestros sitios
+
+## 🖌️ Fases Paint y Layout del Critical Render Path
+
+El paint es la operación más costosa que puede hacer un navegador
+
+* Estas etapas son inevitables al momento de cargar CSS y JS
+  * Podemos tener cuidado al momento de ejecución de ambos
+
+__Cualquier cambio en una propiedad que no sea opacity o transform genera un Paint__
+
+* Toda la etapa de renderización se puede ver bloqueada y afectada por lo que pase en el paint
+* Podemos controlarlo con nuestras animaciones
+* Si tenemos cuidado con las animaciones y las reglas del CSS con los elementos de la pagina
+  * Podemos ayudar que el navegador reduzca Complejidad y cantidad de procesos que debe hacer para volver a pintar los elementos
+* Facebook está consciente acerca de esto al punto que ellos para su navbar usan una sprites antes que una sombra
+
+* Esta técnica es usar una imagen pequeña y multiplicarla varias veces
+* Decidieron usar esta técnica debido a que el CSS causaba muchos problemas al momento de hacer scroll
+
+Debemos tener bastante cuidado con el paint debido a que es un proceso bastante pesado y puede afectar a la experiencia de nuestros usuarios para ello podemos usar técnicas como lo hizo Facebook
