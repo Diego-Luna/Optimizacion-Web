@@ -134,3 +134,23 @@ p {
 
   * Lo primero que hace es ver el ancho disponible para pintar ⇒ Viewport ⇒ width-device
   * Dependiendo del ancho se estima algunas cosas como el box model
+
+## Network waterfall y recursos que bloquean el navegador
+
+Tanto JavaScript como CSS son recursos bloqueantes. Esto quiere decir que cada vez que el navegador encuentra estos archivos, debe parar e interpretarlos mientras sigue haciendo parsing del HTML.
+
+* Script por defecto
+
+bloquea el parsing durante la descarga y ejecución del 
+
+![Script por defecto](./readme-img/script.png)
+
+* Script Defer
+descarga el script JS pero no lo ejecuta hasta que se finaliza el parsing del HTML.
+
+![Script Defer](./readme-img/script_defer.png)
+
+* Script Async
+descarga el script JS durante el parsing y una vez se termine de descargar lo ejecuta inmediatamente, bloqueando solo una “pequeña” parte del parsing.
+
+![Script Async](./readme-img/script_async.png)
