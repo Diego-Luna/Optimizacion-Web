@@ -235,3 +235,26 @@ Podemos detectar paints costosos con las dev tools integradas de chrome. Tambien
 * Podemos medir los paints costosos con las dev tools en la sección en performance
 * Debemos tener siempre en mente que todas las propiedades que cambiarán serán costosas a excepción y el transform
 * Podemos preparar al navegador de futuros cambios con la propiedad will-change en CSS
+
+## ⛔ Bloqueos y complejidad en selectores
+
+El CSS puede bloquear recursos importantes como una imagen de un logo. Tambien debemos estar conscientes de no dar selectores complejos para hacer que el navegador haga un menor esfuerzo
+
+BEM es una forma de escribir clases en CSS. Viene de Bloque Elemento y Modificador
+
+* Si no le damos la debida atención al CSS se puede volver complejo a lo largo del tiempo
+  * Complejo de mantenimiento en equipo
+  * Complejidad para el navegador
+
+* Entre más pequeño sea nuestro CSS, mejor
+* Entre menos complejos sean los selectores que usemos, el navegador tendrá que hacer un menor esfuerzo
+* Anidar selectores genera más trabajo al navegador .menu > div > img
+* Podemos ayudar al navegador usando BEM
+
+  * Nos dará mayor contexto de que bloques estamos editando
+  * No daremos selectores complejos por lo cual facilitaremos el trabajo del navegador
+
+* Nuestro código debería tener como máximo 1 solo selector, 1 sola clase y tratar de evitar los id’s
+
+---
+* Si deseamos priorizar un recurso en el critical render path lo que deberíamos hacer es ponerlo en una etiqueta img
