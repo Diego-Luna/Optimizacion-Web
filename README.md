@@ -224,3 +224,14 @@ __Cualquier cambio en una propiedad que no sea opacity o transform genera un Pai
 * Decidieron usar esta técnica debido a que el CSS causaba muchos problemas al momento de hacer scroll
 
 Debemos tener bastante cuidado con el paint debido a que es un proceso bastante pesado y puede afectar a la experiencia de nuestros usuarios para ello podemos usar técnicas como lo hizo Facebook
+
+## 👀 Detectando Paints costosos y optimizando animaciones
+
+Podemos detectar paints costosos con las dev tools integradas de chrome. Tambien podemos reducirlas usando el concepto de Cualquier cambio en una propiedad que no sea opacity o transform genera un Paint y también usando la propiedad will-change de CSS.
+
+* Este tipo de optimizaciones no es algo que se haga al inicio si no que, al momento de detectar el problema, procedemos con la optimización del lugar visto
+* Por lo general se trata de CSS y animaciones
+* Esto es bastante notable de percibir ya que nuestro sitio web va lento o las animaciones no van fluidas
+* Podemos medir los paints costosos con las dev tools en la sección en performance
+* Debemos tener siempre en mente que todas las propiedades que cambiarán serán costosas a excepción y el transform
+* Podemos preparar al navegador de futuros cambios con la propiedad will-change en CSS
