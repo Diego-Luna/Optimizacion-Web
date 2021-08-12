@@ -290,3 +290,67 @@ Las webs fonts son recursos pesados y tienen bastante costo a nivel de performan
 Links:
 * https://www.zachleat.com/web/css-tricks-web-fonts/
 * https://github.com/typekit/webfontloader 
+
+
+## 🖼️ Imágenes, formato y compresión
+
+* __GIF__ es el único formato que nos permite animar imágenes
+* __PNG-8__ utiliza el color de 8 bits. Al igual que el formato GIF, el formato PNG-8 comprime eficazmente áreas de color uniforme a la vez que mantiene los detalles nítidos, como los que hay en líneas, logotipos o texto.
+* __JPG__ es un formato de compresión de imágenes, tanto en color como en escala de grises, con alta calidad.
+
+Herramientas en linea:
+* Para editar imagenes : https://www.photopea.com/
+* Para reducir el peso de las imagnes: https://tinypng.com/
+
+Las imágenes son las formas es la forma más fácil, y segura, de reducir el tamaño de una pagina
+Se recomienda que pesen 70 kb, pero con el tiempo en los mobiles creció en promedio hasta 900 kb y en escritorio hasta 1 MB
+
+### Reducir peso de imágenes
+__Only__
+* TinyPNG
+
+__API__
+* Cloudinary
+* Netlify
+* TinyPNG
+
+__Dev Flow__
+* Webpack
+* Grunt
+* Gulp
+* post-commit
+
+### Formatos de compresión
+
+__Los más populares__
+* GIF
+* PNG (y PNG-8)
+* JPG
+
+### GIF
+* Es un formato liviano
+* 256 colores
+* No degradados
+* Perfecto cuando hay pocos colores, colores planos y sin transparencia
+
+### PNG-8
+* Nos da todas las ventajas de GIF + transparencias
+* Perfecto para íconos y algunos logos
+
+### PNG (24)
+* PNG-8 + colores ilimitados
+* Imágenes con degradados o muchos colores con transparencia
+
+### JPG o JPEG
+
+* Nos sirve para fotografías
+* Millones de colores
+* Degradados
+* Sin transparencia
+* Tiene dos modos de progresión de carga
+  * Progresivo
+  * No progresivo
+* Siempre sera bueno dar un JPG progresivo
+
+RESUMEN: Las imágenes son una manera fácil y segura de optimizar los sitios web, ya que podemos analizar como las estamos usando y podemos utilizar herramientas ya sea para reducir el tamaño en medida del mismo o para optimizar el peso que tiene.
+
