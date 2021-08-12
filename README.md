@@ -354,3 +354,55 @@ __Los más populares__
 
 RESUMEN: Las imágenes son una manera fácil y segura de optimizar los sitios web, ya que podemos analizar como las estamos usando y podemos utilizar herramientas ya sea para reducir el tamaño en medida del mismo o para optimizar el peso que tiene.
 
+
+## 🎨 ¿WebFont, Imagen o SVG?
+
+Una imagen es una matriz dividida en cuadrados cada uno, es la representación de un pixel
+
+SVG o vectores son elementos generados matemáticamente por el navegador
+
+Above the fold primeros 500 a 600 pixeles de la pantalla, es la parte más importante porque es lo primero que ven los usuarios
+
+### Imagen vs Vectores
+
+Si aplicamos zoom a cada uno
+* Imagen ⇒ Se verán los pixeles
+* Vector ⇒ Mantendrá la calidad
+
+### Web Fonts
+
+__Ventajas__
+
+* Son prácticos
+* Fáciles de usar y distribuir
+
+__Desventajas__
+* Un recurso más
+* HTTP Request
+* Bloqueantes
+* No son accesibles
+
+### SVG
+
+__Ventajas__
+
+* Livianos
+* Inline en el HTML
+* Accesibilidad
+* Animaciones
+* Data URI
+
+__Desventajas__
+
+* Se quita facilidad
+* Requiere un diseñador
+* Incrementa el largo del HTML ⇒ Puede ser incómodo para el equipo de trabajo, pero para el navegador no
+
+__¿Cuándo usarlos?__
+
+* Logos (especialmente “Above the fold”)
+* Ilustraciones
+* Ilustraciones animadas
+* En general: gráficos de los que puedas mantener un fácil control
+
+Tenemos dos opciones las webfonts que son bastantes fáciles y practicas al momento de usarlas, pero implican un recurso más que pedir mediante HTTP, volviéndolo bloqueante a nivel de performance, una alternativa es un SVG que nos da una mejor accesibilidad, pero la desventaja es que puede llegar a ser extenso en HTML, solo afectando un poco a la experiencia de desarrollo
