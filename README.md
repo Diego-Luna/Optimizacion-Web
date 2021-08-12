@@ -258,3 +258,35 @@ BEM es una forma de escribir clases en CSS. Viene de Bloque Elemento y Modificad
 
 ---
 * Si deseamos priorizar un recurso en el critical render path lo que deberíamos hacer es ponerlo en una etiqueta img
+
+## 💬 WebFonts y su impacto en rendimiento
+
+* Los webs fonts son bastantes dañinos para el performance
+* Puede impactar al punto de que el máximo debería ser 2, Lo recomendable es 1 pero si el rendimiento es crítico entonces no deberías traer web fonts
+* En general hay tres formas de cargar fuentes y cada una causa un problem
+
+### 1. Como estilo
+* <link> común (i.e.: Google fonts)
+* HTML parsing no continúa hasta que se descargue la fuente
+* Bloqueante ⇒ Para el parsing del HTML, para descargar la fuente y una vez descargada, se continua con el parsing
+
+### 2. De forma alterna
+* Fuente por defecto mientras carga la web Font
+* Flash of Unstyled Text (FOUT)
+* Ese cambio genera un parpadeo, el cual es perceptible para los usuarios
+
+### 3. Luego del HTML parsing
+* No mostrar texto hasta que se descargue la fuente
+* Flash of Invisible Text (FOIT)
+
+-------
+
+* Google Fonts en las últimas versiones nos permite tener una fuente por defecto hasta que se cargue la que deseemos poniendo en el link &display=swap
+* Tambien podemos hacerlo con una librería open source llamada web font loader
+  * Esta librería nos brinda eventos de los estados de nuestras fuentes a través de clases
+
+Las webs fonts son recursos pesados y tienen bastante costo a nivel de performance, debemos tener un límite de dos fuentes y debemos tomar en cuenta todas las estrategias que tenemos para cargarlas.
+
+Links:
+* https://www.zachleat.com/web/css-tricks-web-fonts/
+* https://github.com/typekit/webfontloader 
