@@ -406,3 +406,58 @@ __¿Cuándo usarlos?__
 * En general: gráficos de los que puedas mantener un fácil control
 
 Tenemos dos opciones las webfonts que son bastantes fáciles y practicas al momento de usarlas, pero implican un recurso más que pedir mediante HTTP, volviéndolo bloqueante a nivel de performance, una alternativa es un SVG que nos da una mejor accesibilidad, pero la desventaja es que puede llegar a ser extenso en HTML, solo afectando un poco a la experiencia de desarrollo
+
+## 👨‍🚀 Técnicas avanzadas con Lazy Loading
+
+Intersection observer es una API del navegador la cual ve cuales son los elementos visibles del documento y según a esa información genera eventos
+
+* Existen lazy loading de carga y de progresión
+* Medium aplica una técnica de lazy loading en las imágenes
+  * Al principio nos aparecerá una imagen borrosa y pixelada hasta que la tengamos lista y sea visible en pantalla
+  * Ira progresivamente mejorando la imagen
+* El lazy loading de carga, trata de cargar las imágenes cuando la imagen sea de carga
+  * Esto es conveniente para ahorrar recursos a los usuarios
+* Existen tres formas de hacer lazy loading de carga
+
+### De forma nativa
+
+El navegador se encargará de hacerlo de forma automática
+
+```html
+<img src="..." loading="lazy" alt="..." />
+```
+
+__Ventajas__
+* Nativo
+* Facil
+* Conveniente
+* Video, iframes
+
+__Desventajas__
+* Es tan nuevo, que tiene poco soporte (actualmente)
+
+Mas info : https://caniuse.com/?search=lazy 
+
+### Intersection Observer
+
+__Ventajas__
+* Técnicamente más correcto (luego de nativo)
+* Relativamente fácil
+
+__Desventajas__
+* No soportado por internet explorer
+* Versión 2 en proceso
+
+### Scroll Listener
+__ventajas__
+* Soportado en todos los navegadores
+
+__Desventajas__
+* Scroll listener
+* Muchos cálculos por evento
+
+RESUMEN: Para poder cargar las imágenes dinámicamente tenemos diferentes alternativas, en cada una debemos considerar el soporte que tiene con los navegadores y como lo implementaremos en el proyecto
+
+Link:
+* Ejemplo funcional del IntersectionObserver: https://codesandbox.io/s/eloquent-joliot-wcc52
+* Libreria de Lazy Loading: https://github.com/ApoorvSaxena/lozad.js 
