@@ -474,3 +474,25 @@ _Como ayudamos a que nuestros usuarios tengan la mejor imagen sin importar su co
 * Existen servicios o librerías como cloudinary o Gatsby el cual nos ayudan a usar esta característica
 
 Podemos mejorar la experiencia de usuario con las imágenes brindando soporte para diferentes tamaños de dispositivo a las imágenes y que estas carguen la resolución y el tamaño según a este criterio
+
+## 💖 JavaScript y aplicaciones modernas y Utilizando un servidor de producción
+
+* Web moderna está basada en JavaScript
+* Muchas veces no somos conscientes al momento de instalar muchas dependencias, estamos creando una mala experiencia para los usuarios
+* En el 2018 se estimó que el tamaño medio de los sitios web esta alrededor de 350kB [Tamaño moderadamente aceptable]
+  * El tiempo de espera para que una aplicación sea interactiva tarda más de 15 segundos
+
+_Si el JavaScript de lado del cliente no está beneficiando a la experiencia de usuario, pregúntate a ti mismo, si realmente es necesario_
+
+* Webpack en modo de desarrollo no realiza ninguna optimización de código
+* Lo que haremos sera:
+  1. Compilar webpack en producción
+  2. Utilizar un servidor listo para producción
+
+* Si ponemos -p en webpack hace dos cosas
+  * Pone NODE_ENV=production a node
+  * Pasa el parámetro mode=production a webpack
+
+RESUMEN: Es importante tomar en cuenta el modo de producción para analizar si vamos bien con nuestro JavaScript a nivel de performance
+
+Recursos: https://v8.dev/blog/cost-of-javascript-2019 
