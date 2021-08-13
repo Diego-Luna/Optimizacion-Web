@@ -509,3 +509,15 @@ Mas informacion:
 
 * Analisar paquetes de npm : https://bundlephobia.com/ 
 
+
+### ⬇️ Reduciendo el tamaño del bundle
+
+bundle Phobia : https://bundlephobia.com/ 
+
+* Podemos usar soluciones online para analizar que puede estar pesando dentro de nuestra aplicación una de ellas es bundle Phobia
+* Existen librerías que son “Tree Shakable”
+  * Ayudan al empaquetador de solo sacar lo que se necesitan
+* Nos podemos ayudar de bundle Phobia para encontrar paquetes que sean más pequeños a la hora de hacer el bundle de nuestra aplicación
+
+Para reducir el tamaño de nuestro bundle es importante tomar en cuenta las dependencias que usamos y encontrar la forma de reducir el tamaño ya sea usando las funciones necesarias si es que la libreria es tree shakable o buscando una alternativa liviana
+
