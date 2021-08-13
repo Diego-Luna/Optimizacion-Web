@@ -461,3 +461,16 @@ RESUMEN: Para poder cargar las imágenes dinámicamente tenemos diferentes alter
 Link:
 * Ejemplo funcional del IntersectionObserver: https://codesandbox.io/s/eloquent-joliot-wcc52
 * Libreria de Lazy Loading: https://github.com/ApoorvSaxena/lozad.js 
+
+## 📲 Técnicas avanzadas con Responsive Loading
+
+Una imagen de 300 kb
+Un usuario que se conecte con un dispositivo de gama alta con una red 5G va ser diferente con un usuario de gama baja con una red 2G
+
+_Como ayudamos a que nuestros usuarios tengan la mejor imagen sin importar su conexión y dispositivo_
+
+* Es ahi donde viene el responsive loading el cual se encarga de esta tarea
+* Esto nos ayuda a cargar imágenes según el tamaño del dispositivo
+* Existen servicios o librerías como cloudinary o Gatsby el cual nos ayudan a usar esta característica
+
+Podemos mejorar la experiencia de usuario con las imágenes brindando soporte para diferentes tamaños de dispositivo a las imágenes y que estas carguen la resolución y el tamaño según a este criterio
