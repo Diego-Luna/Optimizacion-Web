@@ -495,4 +495,17 @@ _Si el JavaScript de lado del cliente no está beneficiando a la experiencia de 
 
 RESUMEN: Es importante tomar en cuenta el modo de producción para analizar si vamos bien con nuestro JavaScript a nivel de performance
 
-Recursos: https://v8.dev/blog/cost-of-javascript-2019 
+Recursos: https://v8.dev/blog/cost-of-javascript-2019
+
+## 🔍 Analizando el bundle de la aplicación
+
+* webpack tienen herramientas y plugins que nos ayudan a analizar el bundle del JS
+* Podemos usar webpack bundler analyzer para analizar y tener una medida exacta de que está pasando dentro del bundler a través de una grafica
+
+Podemos verificar el tamaño de nuestras dependencias y nuestro código a través de herramientas de análisis de tamaño
+
+Mas informacion:
+* Webpack Bundle Analyzer : https://github.com/webpack-contrib/webpack-bundle-analyzer 
+
+* Analisar paquetes de npm : https://bundlephobia.com/ 
+
