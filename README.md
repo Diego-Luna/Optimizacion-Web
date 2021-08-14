@@ -510,7 +510,7 @@ Mas informacion:
 * Analisar paquetes de npm : https://bundlephobia.com/ 
 
 
-### ⬇️ Reduciendo el tamaño del bundle
+##  ⬇️ Reduciendo el tamaño del bundle
 
 bundle Phobia : https://bundlephobia.com/ 
 
@@ -521,3 +521,16 @@ bundle Phobia : https://bundlephobia.com/
 
 Para reducir el tamaño de nuestro bundle es importante tomar en cuenta las dependencias que usamos y encontrar la forma de reducir el tamaño ya sea usando las funciones necesarias si es que la libreria es tree shakable o buscando una alternativa liviana
 
+##  🏹 Code Splitting
+
+Code splitting por paginas es una manera de hacer code splitting el cual consiste en cuando el usuario cargue una página en específico el bundle que se enviara al navegador sera una sola fracción y lo que esa página necesite
+
+* Si bien podemos reducir el tamaño de nuestros bundle, llegará un momento donde no tendrá más reducción
+* En ese momento debemos tomar otras estrategias y el code splitting es una de ellas
+* En vez de tener un bundle gigante de nuestra aplicación, lo que hace el code splitting sera dividirlo en diferentes partes para que sea mucho más fácil y pese menos a la hora de enviarlo al navegador
+  * Frameworks como Angular, Next y Gatsby se genera un code splitting basado en paginas
+* Otra técnica es dividir el código de las librerías [vender] de nuestro bundle final
+  * Esta técnica es beneficiosa en el sentido de que los navegadores hacen cache de los archivos, por lo cual los vendors se quedaran en cache ya que estos no se suelen actualizar mucho.
+  * Como efecto reduciremos la cantidad de requests
+
+RESUMEN: Podemos ver que el code splitting es dividir el código, es beneficioso el uso que se le quiera dar, ya que se puede implementar de diferentes formas
