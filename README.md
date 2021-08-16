@@ -534,3 +534,74 @@ Code splitting por paginas es una manera de hacer code splitting el cual consist
   * Como efecto reduciremos la cantidad de requests
 
 RESUMEN: Podemos ver que el code splitting es dividir el código, es beneficioso el uso que se le quiera dar, ya que se puede implementar de diferentes formas
+
+Links:
+* Optimization en Webpack : https://webpack.js.org/configuration/optimization/ 
+
+## Lazy Module Loading
+
+1. instale dependencia:
+
+```
+npm install lozad -S
+```
+
+2. Creamos en la carpeta src del proyecto la carpeta modal y dentro de modal se creó el archivo index.js.
+
+3. en src/modal/index.js se escribió:
+```js
+export const modalListener = (event) => {
+    event.preventDefault();
+    const img = event.target
+    const link = img.parentElement;
+    console.log(link.href);
+}
+```
+
+4. en src/index.js se agregó el siguiente código:
+```js
+import lozad from 'lozad';
+import { modalListener } from './modal';
+...
+...
+    .insertAdjacentElement(
+      'afterend',
+      Carousel({
+        itemsList: popular,
+      })
+    )
+
+    /* ENTRE ESTA LINEA!! */
+
+    // Add lazy loading
+    const carouseImages = document.querySelectorAll('.carousel-item__img');
+    const observer = lozad(carouseImages);
+    observer.observe();
+
+    const allYouTubeLinks = document.querySelectorAll('.js-video-link');
+      // console.log(allYouTubeLinks);
+      allYouTubeLinks.forEach((link) => {
+        link.addEventListener('click', modalListener);
+    });
+
+    /* Y ENTRE ESTA LINEA */
+})(document, window)
+```
+5. y por ultimo se agrego en el archivo CarouselItem.js:
+
+SE AGREGÓ EL ATRIBUTO CLASSNAME A LA ETIQUETA ‘a’, este código comienza como en la linea 8, al menos en mi editor.
+
+```js
+const Controls = ({ slug, youtubeVideoId }) =>
+  h(
+    'div',
+    h(
+      'a', // esta 'a' ó 'a.js-video-link y QUITAMOS EL ATRIBUTO className'
+      {
+        className: 'js-video-link',
+        href: `https://www.youtube.com/watch?v=${youtubeVideoId}`,
+        title: 'Watch trailer',
+        target: '_blank',
+        rel: 'noreferrer',
+      },
+```
