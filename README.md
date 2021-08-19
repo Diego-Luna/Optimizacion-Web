@@ -655,4 +655,5 @@ latencia es el tiempo de ida y vuelta de un cliente hacia el servidor
   * Headers del navegador para dar un tiempo de vida para manejar el tiempo de vida
 * Cuando únicamente tenemos un servidor, podemos tener un cliente bastante lejos del mismo eso significara que tomara más tiempo que uno que esté más cerca del cliente
   * CDN se encarga de este tipo de operaciones para mejorar la velocidad de carga
+
 * Eso nos ayuda a reducir la latencia
