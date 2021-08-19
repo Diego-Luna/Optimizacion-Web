@@ -657,3 +657,10 @@ latencia es el tiempo de ida y vuelta de un cliente hacia el servidor
   * CDN se encarga de este tipo de operaciones para mejorar la velocidad de carga
 
 * Eso nos ayuda a reducir la latencia
+
+
+## Introducción a los service workers 
+
+Un service worker es una secuencia de comandos que tu navegador ejecuta en segundo plano, separado de una página web, abriéndoles la puerta a funciones que no necesitan una página web ni interacción de usuario. En la actualidad, ya incorporan funciones como notificaciones push y sincronización en segundo plano.
+
+Mas info: https://developers.google.com/web/fundamentals/primers/service-workers/ 
