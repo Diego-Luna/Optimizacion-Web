@@ -664,3 +664,50 @@ latencia es el tiempo de ida y vuelta de un cliente hacia el servidor
 Un service worker es una secuencia de comandos que tu navegador ejecuta en segundo plano, separado de una página web, abriéndoles la puerta a funciones que no necesitan una página web ni interacción de usuario. En la actualidad, ya incorporan funciones como notificaciones push y sincronización en segundo plano.
 
 Mas info: https://developers.google.com/web/fundamentals/primers/service-workers/ 
+
+## 👾 Performance budget y auditorias automatizadas
+
+Performance badged ⇒ Presupuesto del performance del sitio, con auditorias constantes, además que el sitio deba cumplir estos presupuestos
+
+* Debemos asegurar las optimizaciones a lo largo del tiempo
+* No vale la pena, se vean opacadas por nuevos cambios
+
+_No se controla lo que no se continúa midiendo_
+
+El Performance budget trata tres puntos
+  1.  Elige tus métricas
+  2.  Establece un límite
+  3.  Automatiza la auditoría
+
+Automatizar:
+  * Lighthouse
+  * Webpack
+  * Scripts
+
+Podemos mandar todo este trabajo al CI
+
+RESUMEN: Podemos automatizar el proceso de medir nuestro sitio mediante lighthouse CLI el cual puede funcionar en GitHub Actions. Para eso debemos tener claro cuáles son nuestras métricas y establecer los límites de las mismas
+
+## 🚇 Medidas reales y monitoreo constante
+
+__RUM__ viene de Real User Metric
+
+__medidas de laboratorio__ Son aquellas las cuales tenemos pleno control de lo que está sucediendo y el proyecto este o en local o en el servidor propio
+
+* Nuestras medidas actuales son llamadas medidas de laboratorio
+* Esto no representa la realidad para nuestros usuarios
+* Por ello debemos tomar medidas reales de nuestro sitio
+
+### Métricas reales
+
+* Medidas en el sitio de producción
+* Monitoreo constante e histórico
+* Cumplir las métricas para los usuarios del percentil 75
+
+RESUMEN: Deberíamos medir nuestro sitio en producción debido a que las métricas vistas son de laboratorio
+
+Recursos:
+  * https://newrelic.com/
+  * https://webpagetest.org/
+  * https://www.pingdom.com/
+  
