@@ -1,0 +1,15 @@
+name: Trigger Netlify Build
+
+on:
+  schedule:
+    # You can use https://crontab.guru to generate the
+    # desired cron sheduled :)
+    - cron: '0 12 * */2 5' # At 12:00 on Friday
+
+jobs:
+  build:
+    name: Request Netlify Webhook
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping
+        run: curl -X POST -d {} https://api.netlify.com/build_hooks/611ebe0ebf67345ea2c1dd0a
